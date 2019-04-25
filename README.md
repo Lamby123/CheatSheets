@@ -8,3 +8,23 @@ E.g.
 
  public static decimal RemoveTrailingZeros(this decimal input) => 
             decimal.Parse(input.ToString("0.#######", new System.Globalization.CultureInfo("en-US")), new System.Globalization.CultureInfo("en-US"));
+
+
+
+
+# read a file 
+FileStream fileStream = new FileStream("./pp-2017.csv", FileMode.Open);
+using (StreamReader reader = new StreamReader(fileStream))
+{
+    string line;
+    while ((line = reader.ReadLine()) != null){
+        var split = line.Split(",");
+        # process file in here 
+    }
+}
+
+
+
+
+
+
